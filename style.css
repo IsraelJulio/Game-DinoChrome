@@ -24,6 +24,27 @@ body {
   margin: 50px 0;
   font-family: arial;
 }
+.instrucao{
+  text-align: center;
+  color: #666;
+  margin: 50px 0;
+  font-family: arial;
+  animation: blinker .5s linear infinite;
+}
+.placar{
+  text-align: right;
+  padding:50px;
+  font-family:   'Arial Narrow Bold', sans-serif;
+}
+
+
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 
 @keyframes slideright {
   from {
