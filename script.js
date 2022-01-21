@@ -1,9 +1,13 @@
 const dino = document.querySelector('.dino');
 const background = document.querySelector('.background');
+const placarObj = document.getElementById('record');
+let pontuacao = 00000;
 
 let isJumping = false;
 let isGameOver = false;
 let position = 0;
+
+placar();
 
 function handleKeyUp(event) {
   if (event.keyCode === 32) {
@@ -58,7 +62,8 @@ function createCactus() {
       // Game over
       clearInterval(leftTimer);
       isGameOver = true;
-      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>'+
+      '<br /> <br/> <h3 class="game-over">Pontuação: '+ pontuacao + '</h3>'
     } else {
       cactusPosition -= 10;
       cactus.style.left = cactusPosition + 'px';
@@ -68,5 +73,22 @@ function createCactus() {
   setTimeout(createCactus, randomTime);
 }
 
-createCactus();
-document.addEventListener('keyup', handleKeyUp);
+ createCactus();
+
+
+ 
+
+async function joinStrings(obj) { 
+  pontuacao++;
+  obj.innerHTML = pontuacao;
+  return ;
+}
+async function placar() {
+  
+    await joinStrings(placarObj).then(result => {
+      if(!isGameOver){
+        setTimeout(placar, 10);
+      }
+     })
+
+}
