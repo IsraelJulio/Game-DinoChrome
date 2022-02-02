@@ -62,3 +62,11 @@ Siga os passos abaixo para contribuir:
     </tr>
   </table>
 </div>
+
+## 📜 License
+
+O projeto lançado em 2022 sobre a licença [MIT](./LICENSE) ❤️ 
+
+Made with ♥ by Israel Julio
+
+Gostou? Deixe uma estrelinha para ajudar o projeto ⭐
